@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/titleFragment">
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.drajnoha.StartGameFragment"
+        android:label="fragment_title"
+        tools:layout="@layout/fragment_start_game" >
+        <action
+            android:id="@+id/action_titleFragment_to_gameFragment"
+            app:destination="@id/addPlayersFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addPlayersFragment"
+        android:name="com.drajnoha.AddPlayersFragment"
+        android:label="fragment_add_players"
+        tools:layout="@layout/fragment_add_players" >
+        <action
+            android:id="@+id/action_addPlayersFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.drajnoha.GameFragment"
+        tools:layout="@layout/fragment_game">
+        <argument
+            android:name="player1"
+            app:argType="string" />
+        <argument
+            android:name="player2"
+            app:argType="string" />
+        <argument
+            android:name="player3"
+            app:argType="string" />
+        <argument
+            android:name="player4"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
